@@ -99,15 +99,15 @@
 
    <script>
        document.getElementById('mainForm').addEventListener('submit', function(event) {
-           event.preventDefault(); // Prevent the default form submission
-           document.getElementById('additionalForm').style.display = 'block'; // Show the additional form
-           window.scrollTo(0, document.getElementById('additionalForm').offsetTop); // Scroll to the additional form
+           event.preventDefault(); 
+           document.getElementById('additionalForm').style.display = 'block'; 
+           window.scrollTo(0, document.getElementById('additionalForm').offsetTop); 
        });
 
        document.getElementById('additionalFormContent').addEventListener('submit', function(event) {
-           event.preventDefault(); // Prevent the default form submission
-           document.getElementById('thankYouMessage').style.display = 'block'; // Show the thank you message
-           window.scrollTo(0, document.getElementById('thankYouMessage').offsetTop); // Scroll to the thank you message
+           event.preventDefault();
+           document.getElementById('thankYouMessage').style.display = 'block'; 
+           window.scrollTo(0, document.getElementById('thankYouMessage').offsetTop); 
        });
    </script>
 
