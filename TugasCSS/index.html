@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Halaman Web TuneFix</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ 
+   <header>
+       <h1>Selamat Datang di TuneFix</h1>
+   </header>
+ 
+   <nav>
+       <ul>
+           <li><a href="#">Beranda</a></li>
+           <li><a href="#">Tentang</a></li>
+           <li><a href="#">Layanan</a></li>
+           <li><a href="#">Kontak</a></li>
+       </ul>
+   </nav>
+
+   <div class="container">
+       <section class="content">
+           <h2>Form Pendaftaran</h2>
+           <div class="form-container">
+               <form id="mainForm">
+                   <label for="name">Nama:</label>
+                   <input type="text" id="name" name="name" required>
+                   
+                   <label for="email">Email:</label>
+                   <input type="email" id="email" name="email" required>
+                   
+                   <label for="password">Password:</label>
+                   <input type="password" id="password" name="password" required>
+                   
+                   <label>Jenis Kelamin:</label>
+                   <div class="radio-group">
+                       <label><input type="radio" name="gender" value="Laki-laki" required> Laki-laki</label>
+                       <label><input type="radio" name="gender" value="Perempuan" required> Perempuan</label>
+                   </div>
+                   
+                   <label>Hobi:</label>
+                   <div class="checkbox-group">
+                       <label><input type="checkbox" name="hobbies" value="Musik"> Musik</label>
+                       <label><input type="checkbox" name="hobbies" value="Olahraga"> Olahraga</label>
+                       <label><input type="checkbox" name="hobbies" value="Gaming"> Gaming</label>
+                       <label><input type="checkbox" name="hobbies" value="Masak"> Masak</label>
+                       <label><input type="checkbox" name="hobbies" value="Makan"> Makan</label>
+                   </div>
+                   
+                   <label for="city">Pilih Kota:</label>
+                   <select id="city" name="city" required>
+                       <option value="Jakarta">Jakarta</option>
+                       <option value="Bandung">Bandung</option>
+                       <option value="Surabaya">Surabaya</option>
+                       <option value="Bekasi">Bekasi</option>
+                       <option value="Karawang">Karawang</option> 
+                   </select>
+                   
+                   <label for="photo">Upload Pas Foto:</label>
+                   <input type="file" id="photo" name="photo">
+                   
+                   <button type="submit">Submit</button>
+               </form>
+           </div>
+           <!-- Form Tambahan -->
+           <div class="form-container" id="additionalForm" style="display: none;">
+               <h1>Form Tambahan</h1>
+               <form id="additionalFormContent">
+                   <label for="address">Alamat:</label>
+                   <input type="text" id="address" name="address" required>
+                   
+                   <label for="phone">Nomor Telepon:</label>
+                   <input type="text" id="phone" name="phone" required>
+                   
+                   <label for="desc">Deskripsi Diri:</label>
+                   <textarea id="desc" name="desc" rows="4" required></textarea>
+                   
+                   <button type="submit">Submit</button>
+               </form>
+           </div>
+           <!-- Pesan Terima Kasih -->
+           <div id="thankYouMessage" style="display: none;">
+               <h2>Terima Kasih!</h2>
+               <p>Terima kasih telah mengisi formulir. Kami akan segera memproses data Anda.</p>
+           </div>
+       </section>
+       <aside class="sidebar">
+           <h2>Sidebar</h2>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti eveniet quod harum, saepe sint vero tempore! Eaque, qui nulla maiores quisquam, dolore vero cum laboriosam quo, fuga molestias magni in?.</p>
+       </aside>
+   </div>
+ 
+   <footer>
+       <div style="height: 2px; background-color: #007bff;"></div>
+   </footer>
+
+   <script>
+       document.getElementById('mainForm').addEventListener('submit', function(event) {
+           event.preventDefault(); 
+           document.getElementById('additionalForm').style.display = 'block'; 
+           window.scrollTo(0, document.getElementById('additionalForm').offsetTop); 
+       });
+
+       document.getElementById('additionalFormContent').addEventListener('submit', function(event) {
+           event.preventDefault();
+           document.getElementById('thankYouMessage').style.display = 'block'; 
+           window.scrollTo(0, document.getElementById('thankYouMessage').offsetTop); 
+       });
+   </script>
+
+</body>
+</html>
