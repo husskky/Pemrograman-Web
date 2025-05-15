@@ -251,7 +251,7 @@ h2 {
 }
 
 .contact-content a:hover {
-    color: #b30000;
+    color: #FFA000;
 }
 
 footer {
@@ -259,6 +259,30 @@ footer {
     color: #fff;
     padding: 20px;
     text-align: center;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .navbar {
+    background-color: rgba(25, 39, 52, 0.85);
+}
+
+.dark-mode .card {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border-top: 6px solid #ffcc00;
+}
+
+.dark-mode .card .button {
+    background-color: #ffcc00;
+    color: #121212;
+}
+
+.dark-mode footer {
+    background-color: #1f1f1f;
 }
 
 @media screen and (max-width: 768px) {
