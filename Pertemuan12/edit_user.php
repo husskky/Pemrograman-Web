@@ -1,6 +1,10 @@
 <?php
 include 'koneksi_db.php';
-session_start();
+    session_start();
+   if (!isset($_SESSION['user_id'])) {
+        header("Location: login.php?message=" . urlencode("Silahkan Login terlebih dahulu"));
+        exit;
+    }
 
 // Ambil ID user dari URL
 $user_id = $_GET['id'];

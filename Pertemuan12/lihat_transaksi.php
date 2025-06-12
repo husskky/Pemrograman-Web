@@ -1,6 +1,10 @@
 <?php
 include 'koneksi_db.php';
-
+    session_start();
+   if (!isset($_SESSION['user_id'])) {
+        header("Location: login.php?message=" . urlencode("Silahkan Login terlebih dahulu"));
+        exit;
+    }
 $query = "
    SELECT 
        Pesanan.ID AS Pesanan_ID, 

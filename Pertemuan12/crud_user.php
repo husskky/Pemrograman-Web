@@ -1,8 +1,10 @@
 <?php
-session_start();
+    session_start();
+   if (!isset($_SESSION['user_id'])) {
+        header("Location: login.php?message=" . urlencode("Silahkan Login terlebih dahulu"));
+        exit;
+    }
 include 'koneksi_db.php';
-
-// **Create: Tambah Pelanggan**
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create'])) {
     $nama = $_POST['nama'];
     $alamat = $_POST['alamat'];
@@ -16,10 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create'])) {
     $stmt->close();
 }
 
-// **Read: Ambil Semua Pelanggan**
 $result = $conn->query("SELECT ID, Nama, Alamat, Email, Telepon FROM pelanggan");
 
-// **Delete: Hapus Pelanggan**
 if (isset($_GET['delete'])) {
     $pelanggan_id = $_GET['delete'];
 

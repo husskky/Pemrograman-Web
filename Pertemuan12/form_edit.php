@@ -1,7 +1,11 @@
 <?php
 include 'koneksi_db.php';
 include 'nav.php';
-
+    session_start();
+   if (!isset($_SESSION['user_id'])) {
+        header("Location: login.php?message=" . urlencode("Silahkan Login terlebih dahulu"));
+        exit;
+    }
 
 $id = $_GET['id'] ?? 0;
 

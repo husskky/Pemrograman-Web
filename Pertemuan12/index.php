@@ -1,4 +1,10 @@
-<?php include 'proses_index.php'; ?>
+<?php include 'proses_index.php'; 
+    session_start();
+   if (!isset($_SESSION['user_id'])) {
+        header("Location: login.php?message=" . urlencode("Silahkan Login terlebih dahulu"));
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
